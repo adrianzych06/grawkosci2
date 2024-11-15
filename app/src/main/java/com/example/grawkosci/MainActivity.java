@@ -50,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void rzutKoscmi() {
-        Random random = new Random();
-        int[] wynikiKosci = new int[5];
+     private void rzutKoscmi() {
+         Random random = new Random();
+         int[] wynikiKosci = new int[5];
 
-        // Generowanie losowych liczb i zapisywanie wyników rzutu
+        
         for (int i = 0; i < 5; i++) {
             wynikiKosci[i] = random.nextInt(6) + 1;
         }
@@ -72,14 +72,14 @@ public class MainActivity extends AppCompatActivity {
         kosc5.setText(String.valueOf(wynikiKosci[4]));
     }
 
-    private int obliczWynikRzutu(int[] wynikiKosci) {
-        int[] licznik = new int[7]; // indeksy 1-6 to wynik rzutu bo 0 jest ignorowane
+     private int obliczWynikRzutu(int[] wynikiKosci) {
+        int[] licznik = new int[7]; 
         for (int wynik : wynikiKosci) {
             licznik[wynik]++;
         }
         int wynikRzutu = 0;
         for (int i = 1; i <= 6; i++) {
-            if (licznik[i] >= 2) { // sumuje tylko jesli liczba sie powtarza min 2 razy
+            if (licznik[i] >= 2) { 
                 wynikRzutu += i * licznik[i];
             }
         }
